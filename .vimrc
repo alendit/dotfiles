@@ -14,6 +14,9 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'bogado/file-line'
 Plugin 'scrooloose/nerdtree'
 Plugin 'bling/vim-airline'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-commentary'
+Plugin 'Lokaltog/vim-easymotion'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -56,3 +59,6 @@ let g:ctrlp_switch_buffer = 0
 nmap \e :NERDTreeToggle<CR>
 " always show powerline
 set laststatus=2
+" themes and colors
+set t_Co=256
+colorscheme inkpot
