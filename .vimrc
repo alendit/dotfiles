@@ -17,6 +17,12 @@ Plugin 'bling/vim-airline'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+" sensible indents
+set tabstop=4
+set expandtab
+set shiftwidth=4
+set softtabstop=4
+
 " list buffers
 nnoremap <F5> :buffers<CR>:buffer<Space> 
 " cycle between buffers
