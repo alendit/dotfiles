@@ -52,6 +52,8 @@ export EDITOR="vim"
 alias kdevelop="KDEV_DISABLE_PLUGINS=kdevcppsupport kdevelop"
 alias ish="ipython --profile=sh"
 source ~/kb/helpers/.kbrc
+export TERM=xterm-256color
+KEYTIMEOUT=1
 
 . $HOME/.shellrc.load
 function exists { which $1 &> /dev/null }

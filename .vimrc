@@ -17,6 +17,9 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'Lokaltog/vim-easymotion'
+Plugin 'techlivezheng/vim-plugin-minibufexpl'
+Plugin 'bling/vim-bufferline'
+Plugin 'mbbill/undotree'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -62,3 +65,5 @@ set laststatus=2
 " themes and colors
 set t_Co=256
 colorscheme inkpot
+" easy motion 
+map <Leader> <Plug>(easymotion-prefix)
