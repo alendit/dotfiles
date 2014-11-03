@@ -21,18 +21,24 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'techlivezheng/vim-plugin-minibufexpl'
 Plugin 'bling/vim-bufferline'
 Plugin 'mbbill/undotree'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-surround'
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+" leader to space
+let mapleader=" "
 
 " sensible indents
 set tabstop=4
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+
+" path in the status line
+set statusline+=%F
 
 " list buffers
 nnoremap <F5> :buffers<CR>:buffer<Space> 
@@ -64,14 +70,14 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
 " nerd tree start
-nmap \e :NERDTreeToggle<CR>
+nmap <leader>\e :NERDTreeToggle<CR>
 " always show powerline
 set laststatus=2
 " themes and colors
 " set t_Co=256
 colorscheme inkpot
 " easy motion
-map <Leader> <Plug>(easymotion-prefix)
+" map <Leader> <Plug>(easymotion-prefix)
 " persistent undo
 set undofile
 set undolevels=1000
@@ -88,3 +94,8 @@ command -nargs=1 Vsb call VsbFunction(<f-args>)
 function VsbFunction (arg1)
     execute 'vert sb' a:arg1
 endfunction
+" ycm
+nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>jb :YcmCompleter GoToDefinition<CR>
+" reenable syntax on buffer close
+let g:miniBufExplForceSyntaxEnable = 1
