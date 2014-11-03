@@ -24,6 +24,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'techlivezheng/vim-plugin-minibufexpl'
 Plugin 'bling/vim-bufferline'
 Plugin 'mbbill/undotree'
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
