@@ -5,6 +5,9 @@ set numberwidth=4
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 syntax on
 
+set exrc
+set secure
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -33,8 +36,8 @@ set softtabstop=4
 " list buffers
 nnoremap <F5> :buffers<CR>:buffer<Space> 
 " cycle between buffers
-nmap <C-n> :bnext<CR>
-nmap <C-p> :bprev<CR>
+nmap <C-l> :bnext<CR>
+nmap <C-h> :bprev<CR>
 " automatically save all buffers
 set autowriteall
 " better movement
@@ -75,3 +78,12 @@ set undoreload=10000
 let myUndoDir = expand($HOME."/.vim_undo")
 call system('mkdir ' . myUndoDir)
 let &undodir = myUndoDir
+" splits
+set splitbelow
+set splitright
+" easier vert splits
+command -nargs=1 Vsb call VsbFunction(<f-args>)
+
+function VsbFunction (arg1)
+    execute 'vert sb' a:arg1
+endfunction
