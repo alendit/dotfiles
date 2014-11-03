@@ -3,6 +3,7 @@ filetype off                  " required
 set number
 set numberwidth=4
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+syntax on
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -63,7 +64,14 @@ nmap \e :NERDTreeToggle<CR>
 " always show powerline
 set laststatus=2
 " themes and colors
-set t_Co=256
+" set t_Co=256
 colorscheme inkpot
-" easy motion 
+" easy motion
 map <Leader> <Plug>(easymotion-prefix)
+" persistent undo
+set undofile
+set undolevels=1000
+set undoreload=10000
+let myUndoDir = expand($HOME."/.vim_undo")
+call system('mkdir ' . myUndoDir)
+let &undodir = myUndoDir
