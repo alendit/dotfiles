@@ -25,6 +25,8 @@ Plugin 'bling/vim-bufferline'
 Plugin 'mbbill/undotree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'rking/ag.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -70,7 +72,7 @@ let g:ctrlp_working_path_mode = 0
 let g:ctrlp_dotfiles = 0
 let g:ctrlp_switch_buffer = 0
 " nerd tree start
-nmap <leader>\e :NERDTreeToggle<CR>
+nmap <leader>e :NERDTreeToggle<CR>
 " always show powerline
 set laststatus=2
 " themes and colors
@@ -98,4 +100,3 @@ endfunction
 nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>jb :YcmCompleter GoToDefinition<CR>
 " reenable syntax on buffer close
-let g:miniBufExplForceSyntaxEnable = 1
