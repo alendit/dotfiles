@@ -27,6 +27,10 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'rking/ag.vim'
+Plugin 'vim-scripts/Improved-AnsiEsc'
+Plugin 'majutsushi/tagbar'
+Bundle 'CCTree'
+Bundle 'ShowMarks'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -52,12 +56,14 @@ set autowriteall
 " better movement
 nmap j gj
 nmap k gk
+nnoremap <C-j> <PageDown>
+nnoremap <C-k> <PageUp>
 " better search
 set incsearch
 set ignorecase
 set smartcase
 set hlsearch
-nmap \q :nohlsearch<CR>
+nmap <leader>q :nohlsearch<CR>
 " better search with incsearch
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
@@ -99,4 +105,14 @@ endfunction
 " ycm
 nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>jb :YcmCompleter GoToDefinition<CR>
-" reenable syntax on buffer close
+" folding
+set foldmethod=indent
+set foldlevel=20
+" silver searcher ag
+noremap <leader>f :Ag<SPACE>
+" copy current file and line number
+map ,n <Esc>:let @*=line(".")<CR>
+" ctags path
+g:tagbar_ctags_bin="/home/vorona/bin/"
+" toggle tagbar
+nmap <leader>t :TagbarToggle<CR>
