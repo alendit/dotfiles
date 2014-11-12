@@ -118,3 +118,4 @@ export LANGUAGE="en_GB:en"
 . $HOME/.shellrc.load
 export PATH=$PATH:$HOME/bin/
 export TERM=xterm-256color
+export EDITOR=vim

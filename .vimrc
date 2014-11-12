@@ -32,6 +32,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'jiangmiao/auto-pairs'
 Bundle 'CCTree'
 Bundle 'ShowMarks'
+Plugin 'vim-scripts/BufClose.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -43,6 +44,9 @@ set tabstop=4
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+
+" autosave on make
+set autowrite
 
 " path in the status line
 set statusline+=%F
