@@ -29,6 +29,7 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'rking/ag.vim'
 Plugin 'vim-scripts/Improved-AnsiEsc'
 Plugin 'majutsushi/tagbar'
+Plugin 'jiangmiao/auto-pairs'
 Bundle 'CCTree'
 Bundle 'ShowMarks'
 call vundle#end()            " required
@@ -113,6 +114,8 @@ noremap <leader>f :Ag<SPACE>
 " copy current file and line number
 map ,n <Esc>:let @*=line(".")<CR>
 " ctags path
-g:tagbar_ctags_bin="/home/vorona/bin/"
+" let g:tagbar_ctags_bin="/home/vorona/bin/"
 " toggle tagbar
 nmap <leader>t :TagbarToggle<CR>
+" remove trailing spaces
+autocmd FileType c,cpp,java,php,python autocmd BufWritePre <buffer> :%s/\s\+$//e
