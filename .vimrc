@@ -21,9 +21,10 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'bling/vim-bufferline'
+Plugin 'ivanov/vim-ipython'
+" Plugin 'bling/vim-bufferline'
 Plugin 'mbbill/undotree'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'rking/ag.vim'
@@ -33,6 +34,7 @@ Plugin 'jiangmiao/auto-pairs'
 Bundle 'CCTree'
 Bundle 'ShowMarks'
 Plugin 'vim-scripts/BufClose.vim'
+Plugin 'ervandew/supertab'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -123,3 +125,5 @@ map ,n <Esc>:let @*=line(".")<CR>
 nmap <leader>t :TagbarToggle<CR>
 " remove trailing spaces
 autocmd FileType c,cpp,java,php,python autocmd BufWritePre <buffer> :%s/\s\+$//e
+" don't set completion globally
+let g:ipy_completefunc = 'local'
