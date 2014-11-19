@@ -35,6 +35,7 @@ Bundle 'CCTree'
 Bundle 'ShowMarks'
 Plugin 'vim-scripts/BufClose.vim'
 Plugin 'ervandew/supertab'
+Plugin 'kana/vim-tabpagecd'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
