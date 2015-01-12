@@ -21,12 +21,21 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'bling/vim-bufferline'
+Plugin 'ivanov/vim-ipython'
+" Plugin 'bling/vim-bufferline'
 Plugin 'mbbill/undotree'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'rking/ag.vim'
+Plugin 'vim-scripts/Improved-AnsiEsc'
+Plugin 'majutsushi/tagbar'
+Plugin 'jiangmiao/auto-pairs'
+Bundle 'CCTree'
+Bundle 'ShowMarks'
+Plugin 'vim-scripts/BufClose.vim'
+Plugin 'ervandew/supertab'
+Plugin 'kana/vim-tabpagecd'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -38,6 +47,9 @@ set tabstop=4
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+
+" autosave on make
+set autowrite
 
 " path in the status line
 set statusline+=%F
@@ -52,12 +64,14 @@ set autowriteall
 " better movement
 nmap j gj
 nmap k gk
+nnoremap <C-j> <PageDown>
+nnoremap <C-k> <PageUp>
 " better search
 set incsearch
 set ignorecase
 set smartcase
 set hlsearch
-nmap \q :nohlsearch<CR>
+nmap <leader>q :nohlsearch<CR>
 " better search with incsearch
 map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
@@ -99,4 +113,18 @@ endfunction
 " ycm
 nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>jb :YcmCompleter GoToDefinition<CR>
-" reenable syntax on buffer close
+" folding
+set foldmethod=indent
+set foldlevel=20
+" silver searcher ag
+noremap <leader>f :Ag<SPACE>
+" copy current file and line number
+map ,n <Esc>:let @*=line(".")<CR>
+" ctags path
+" let g:tagbar_ctags_bin="/home/vorona/bin/"
+" toggle tagbar
+nmap <leader>t :TagbarToggle<CR>
+" remove trailing spaces
+autocmd FileType c,cpp,java,php,python autocmd BufWritePre <buffer> :%s/\s\+$//e
+" don't set completion globally
+let g:ipy_completefunc = 'local'
