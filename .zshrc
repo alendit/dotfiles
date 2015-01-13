@@ -42,7 +42,7 @@ ZSH_THEME="flazz"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git bower command-not-found coffee dircycle fabric fbterm git-hubflow lol node npm nyan per-directory-history pip sublime virtualenvwrapper websearch yeoman vi-mode)
+plugins=(git bower command-not-found coffee dircycle fabric fbterm git-hubflow lol node npm nyan pip sublime virtualenvwrapper websearch yeoman vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -71,3 +71,6 @@ if exists percol; then
     bindkey '^R' percol_select_history
 fi
 bindkey '^R' percol_select_history
+
+stty start undef
+stty stop undef
