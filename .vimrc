@@ -33,6 +33,7 @@ Plugin 'jiangmiao/auto-pairs'
 Bundle 'CCTree'
 Bundle 'ShowMarks'
 Plugin 'vim-scripts/BufClose.vim'
+Plugin 'schickling/vim-bufonly'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
