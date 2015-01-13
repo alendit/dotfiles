@@ -128,3 +128,6 @@ nmap <leader>t :TagbarToggle<CR>
 autocmd FileType c,cpp,java,php,python autocmd BufWritePre <buffer> :%s/\s\+$//e
 " don't set completion globally
 let g:ipy_completefunc = 'local'
+" better tab completion for filename
+set wildmode=longest,list,full
+set wildmenu
