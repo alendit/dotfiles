@@ -38,6 +38,7 @@ Plugin 'schickling/vim-bufonly'
 Plugin 'ervandew/supertab'
 Plugin 'kana/vim-tabpagecd'
 Plugin 'vim-scripts/a.vim'
+Plugin 'tell-k/vim-autopep8'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
