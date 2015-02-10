@@ -24,7 +24,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'ivanov/vim-ipython'
 " Plugin 'bling/vim-bufferline'
 Plugin 'mbbill/undotree'
-" Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'tpope/vim-surround'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'rking/ag.vim'
@@ -33,10 +33,11 @@ Plugin 'majutsushi/tagbar'
 Plugin 'jiangmiao/auto-pairs'
 Bundle 'CCTree'
 Bundle 'ShowMarks'
-Plugin 'vim-scripts/BufClose.vim'
+Plugin 'vim-scripts/bufkill.vim'
 Plugin 'schickling/vim-bufonly'
 Plugin 'ervandew/supertab'
 Plugin 'kana/vim-tabpagecd'
+Plugin 'vim-scripts/a.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -114,6 +115,7 @@ endfunction
 " ycm
 nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>jb :YcmCompleter GoToDefinition<CR>
+let g:ycm_configrm_extra_conf = 0
 " folding
 set foldmethod=indent
 set foldlevel=20
@@ -132,3 +134,5 @@ let g:ipy_completefunc = 'local'
 " better tab completion for filename
 set wildmode=longest,list,full
 set wildmenu
+noremap <C-s> :A<CR>
+noremap <leader>w :echo @%<CR>

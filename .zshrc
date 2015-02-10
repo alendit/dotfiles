@@ -74,3 +74,4 @@ bindkey '^R' percol_select_history
 
 stty start undef
 stty stop undef
+alias vo=vim --remote
