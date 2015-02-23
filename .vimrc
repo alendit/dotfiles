@@ -135,5 +135,9 @@ let g:ipy_completefunc = 'local'
 " better tab completion for filename
 set wildmode=longest,list,full
 set wildmenu
-noremap <C-s> :A<CR>
-noremap <leader>w :echo @%<CR>
+nnoremap <C-s> :A<CR>
+nnoremap <leader>w :echo @%<CR>
+" disable leader mappings
+" iunmap <Space>ihn
+" iunmap <Space>ih
+" iunmap <Space>is
