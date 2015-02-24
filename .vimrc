@@ -39,11 +39,12 @@ Plugin 'ervandew/supertab'
 Plugin 'kana/vim-tabpagecd'
 Plugin 'vim-scripts/a.vim'
 Plugin 'tell-k/vim-autopep8'
+Plugin 'kchmck/vim-coffee-script'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
 " leader to space
-let mapleader=" "
+let mapleader="-"
 
 " sensible indents
 set tabstop=4
@@ -137,7 +138,5 @@ set wildmode=longest,list,full
 set wildmenu
 nnoremap <C-s> :A<CR>
 nnoremap <leader>w :echo @%<CR>
-" disable leader mappings
-" iunmap <Space>ihn
-" iunmap <Space>ih
-" iunmap <Space>is
+" coffee fileype detection
+au BufNewFile,BufRead *.coffee setl filetype=coffee tabstop=2 shiftwidth=2 expandtab foldmethod=indent nofoldenable
