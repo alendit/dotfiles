@@ -40,6 +40,7 @@ Plugin 'kana/vim-tabpagecd'
 Plugin 'vim-scripts/a.vim'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'alfredodeza/pytest.vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
