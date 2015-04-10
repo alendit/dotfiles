@@ -41,6 +41,7 @@ Plugin 'vim-scripts/a.vim'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'alfredodeza/pytest.vim'
+Plugin 'mattn/emmet-vim'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -140,4 +141,6 @@ set wildmenu
 nnoremap <C-s> :A<CR>
 nnoremap <leader>w :echo @%<CR>
 " coffee fileype detection
-au BufNewFile,BufRead *.coffee setl filetype=coffee tabstop=2 shiftwidth=2 expandtab foldmethod=indent nofoldenable
+au BufNewFile,BufRead *.coffee setl filetype=coffee tabstop=2 shiftwidth=2 smarttab expandtab foldmethod=indent nofoldenable
+" like really save these changes
+cmap w!! %!sudo tee > /dev/null %

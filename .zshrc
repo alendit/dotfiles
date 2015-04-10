@@ -51,7 +51,6 @@ export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/s
 export EDITOR="vim"
 alias kdevelop="KDEV_DISABLE_PLUGINS=kdevcppsupport kdevelop"
 alias ish="ipython --profile=sh"
-source ~/kb/helpers/.kbrc
 export TERM=xterm-256color
 KEYTIMEOUT=1
 
@@ -75,3 +74,5 @@ bindkey '^R' percol_select_history
 stty start undef
 stty stop undef
 alias vo=vim --remote
+export TERM=xterm-256color
+alias anaconda_switch='export PATH=`~/bin/anaconda_switcher.py`'
