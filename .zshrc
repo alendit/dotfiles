@@ -76,3 +76,5 @@ stty stop undef
 alias vo=vim --remote
 export TERM=xterm-256color
 alias anaconda_switch='export PATH=`~/bin/anaconda_switcher.py`'
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+eval $(ssh-agent) > /dev/null 2>&1

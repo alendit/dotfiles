@@ -4,6 +4,7 @@ set number
 set numberwidth=4
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 syntax on
+set viminfo='10,\"100,:20,%,n~/.viminfo'
 
 set exrc
 set secure
@@ -32,7 +33,7 @@ Plugin 'vim-scripts/Improved-AnsiEsc'
 Plugin 'majutsushi/tagbar'
 Plugin 'jiangmiao/auto-pairs'
 Bundle 'CCTree'
-Bundle 'ShowMarks'
+" Bundle 'ShowMarks'
 Plugin 'vim-scripts/bufkill.vim'
 Plugin 'schickling/vim-bufonly'
 Plugin 'ervandew/supertab'
@@ -144,3 +145,15 @@ nnoremap <leader>w :echo @%<CR>
 au BufNewFile,BufRead *.coffee setl filetype=coffee tabstop=2 shiftwidth=2 smarttab expandtab foldmethod=indent nofoldenable
 " like really save these changes
 cmap w!! %!sudo tee > /dev/null %
+" restore previous file location
+function! ResCur()
+  if line("'\"") <= line("$")
+    normal! g`"
+    return 1
+  endif
+endfunction
+
+augroup resCur
+  autocmd!
+  autocmd BufWinEnter * call ResCur()
+augroup END
