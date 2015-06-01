@@ -78,3 +78,5 @@ export TERM=xterm-256color
 alias anaconda_switch='export PATH=`~/bin/anaconda_switcher.py`'
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 eval $(ssh-agent) > /dev/null 2>&1
+export LIBVA_DRIVER_NAME=vdpau
+[[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"

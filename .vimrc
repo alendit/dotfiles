@@ -26,13 +26,12 @@ Plugin 'ivanov/vim-ipython'
 " Plugin 'bling/vim-bufferline'
 Plugin 'mbbill/undotree'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'tpope/vim-surround'
 Plugin 'octol/vim-cpp-enhanced-highlight'
 Plugin 'rking/ag.vim'
 Plugin 'vim-scripts/Improved-AnsiEsc'
 Plugin 'majutsushi/tagbar'
-Plugin 'jiangmiao/auto-pairs'
 Bundle 'CCTree'
+Plugin 'kshenoy/vim-signature'
 " Bundle 'ShowMarks'
 Plugin 'vim-scripts/bufkill.vim'
 Plugin 'schickling/vim-bufonly'
@@ -43,6 +42,15 @@ Plugin 'tell-k/vim-autopep8'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'alfredodeza/pytest.vim'
 Plugin 'mattn/emmet-vim'
+Plugin 'christoomey/vim-tmux-navigator'
+" Plugin 'klen/python-mode'
+Plugin 'vim-scripts/vim-auto-save'
+" clojure
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-fireplace'
+Plugin 'vim-scripts/paredit.vim'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'dgrnbrg/vim-redl'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -63,16 +71,11 @@ set statusline+=%F
 
 " list buffers
 nnoremap <F5> :buffers<CR>:buffer<Space> 
-" cycle between buffers
-nmap <C-l> :bnext<CR>
-nmap <C-h> :bprev<CR>
 " automatically save all buffers
 set autowriteall
 " better movement
 nmap j gj
 nmap k gk
-nnoremap <C-j> <PageDown>
-nnoremap <C-k> <PageUp>
 " better search
 set incsearch
 set ignorecase
@@ -157,3 +160,13 @@ augroup resCur
   autocmd!
   autocmd BufWinEnter * call ResCur()
 augroup END
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+" autosave
+let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0
+let g:auto_save_no_updatetime = 1
