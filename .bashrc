@@ -119,3 +119,5 @@ export LANGUAGE="en_GB:en"
 export PATH=$PATH:$HOME/bin/
 export TERM=xterm-256color
 export EDITOR=vim
+_JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=lcd_hrgb'
+eval $(thefuck --alias)

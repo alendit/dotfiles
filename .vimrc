@@ -22,7 +22,6 @@ Plugin 'bling/vim-airline'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-commentary'
 Plugin 'Lokaltog/vim-easymotion'
-Plugin 'ivanov/vim-ipython'
 " Plugin 'bling/vim-bufferline'
 Plugin 'mbbill/undotree'
 Plugin 'Valloric/YouCompleteMe'
@@ -51,6 +50,10 @@ Plugin 'tpope/vim-fireplace'
 Plugin 'vim-scripts/paredit.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'dgrnbrg/vim-redl'
+Plugin 'benmills/vimux'
+" multiple cursors
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'lekv/vim-clewn'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -101,7 +104,7 @@ nmap <leader>e :NERDTreeToggle<CR>
 set laststatus=2
 " themes and colors
 " set t_Co=256
-colorscheme inkpot
+colorscheme wombat
 " easy motion
 " map <Leader> <Plug>(easymotion-prefix)
 " persistent undo
@@ -170,3 +173,11 @@ au Syntax * RainbowParenthesesLoadBraces
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 let g:auto_save_no_updatetime = 1
+
+"vimux
+noremap <silent> <Leader>c :python run_cell(save_position=True, cell_delim='# <codecell>')<CR>
+map <Leader>vip :call VimuxIpy()<CR>
+vmap <silent> <Leader>e :python run_visual_code()<CR>
+
+" automatic bracers
+inoremap {<cr> {<cr>}<c-o>O
