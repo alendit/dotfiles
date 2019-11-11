@@ -1,0 +1,107 @@
+#
+# Executes commands at the start of an interactive session.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Customize to your needs...
+# This function checks whether we have a given program on the system.
+export DISABLE_AUTO_TITLE=true
+have()
+{
+	  command -v $1 &>/dev/null
+}
+
+source ~/.zplug/init.zsh
+
+zplug "robbyrussell/oh-my-zsh", use:"lib/*.zsh"
+zplug "plugins/git", from:oh-my-zsh
+zplug "plugins/dircycle", from:oh-my-zsh
+zplug "plugins/vscode", from:oh-my-zsh
+zplug "plugins/autojump", from:oh-my-zsh
+zplug "plugins/fzf", from:oh-my-zsh
+zplug "marzocchi/zsh-notify"
+zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+
+zplug load
+
+fpath=(~/zsh-completions/src $fpath)
+bindkey -e
+
+alias ish="ipython --profile=sh"
+
+stty start undef
+stty stop undef
+alias vo=vim --remote
+alias anaconda_switch='export PATH=`~/bin/anaconda_switcher.py`'
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+
+alias srm='gvfs-trash'
+alias ec='emacsclient'
+~/bin/start_agent.sh
+
+# emacs
+alias e='emacsclient -t -s /tmp/emacs1000/prelude'
+alias ec='emacsclient -c'
+alias vim='emacsclient -t -s /tmp/emacs1000/prelude'
+alias vi='emacsclient -t -s /tmp/emacs1000/prelude'
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
+export PATH=$HOME/bin:$HOME/.nvm/versions/node/v$(cat $HOME/.nvm/alias/default)/bin:$HOME/go/bin:$PATH
+export GOPATH=$HOME/projects/go
+
+
+# load rustup env
+. ~/.cargo/env
+alias cb="cargo build"
+
+
+# notify plugin config
+zstyle ':notify:*' error-title "wow such #fail"
+zstyle ':notify:*' success-title "very #success. wow"
+zstyle ':notify:*' command-complete-timeout 15
+zstyle ':notify:*' activate-terminal no
+zstyle ':notify:*' disable-urgent yes
+
+
+# source ~/bin/zbell.sh
+function so() {
+    source $1/bin/activate
+}
+
+# export PATH=/home/alendit/.local/share/compile-tracker/bin:$PATH
+function tydot() {
+  x=`mktemp --suffix=.png`
+  if [ "$1" = "-" ]
+  then
+    dot -Tpng -o $x
+  else
+    dot -Tpng $1 -o $x
+  fi
+  tycat $x
+  sleep .05
+  rm -f $x
+}
+
+alias jn="jupyter notebook"
+
+function objd() {
+  objdump -d --disassembler-options=intel $1 | less
+}
+
+alias pr="pipenv run"
+alias prp="pipenv run python"
+source /etc/profile.d/nix.sh
+source /etc/profile.d/nix-daemon.sh
+
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+setopt no_share_history
+alias nj=ninja
+alias mj=make -j
+
+. $HOME/.shellrc.load
